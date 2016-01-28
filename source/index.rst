@@ -12,10 +12,10 @@ MANA API文档
    :numbered:
 
    overview
-   identity_api
-   purge
-   prefetch
-   req_status
+   pm
+   pm_act
+   pm_accounts
+   pm_monitor
 
 Indices and tables
 ==================
