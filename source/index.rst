@@ -15,7 +15,7 @@ MANA API文档
    pm
    pm_act
    pm_accounts
-   pm_monitor
+   pm_moni
    vm_flow
 
 Indices and tables
