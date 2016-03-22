@@ -117,8 +117,12 @@ API规范
               "cpu_num": 8,
               "mem_size": 16,
               "disk_size": 20,
-              "lan_ip_set": {"test1":["122.22.3.45"]},
-              "wan_ip_set": {"test1":["122.22.3.45"]},
+              "lan_ip_set": [
+                {"name": "test1", "ip_set": ["122.22.3.45"]}
+                ],
+              "wan_ip_set": [
+                {"name": "test1", "ip_set": ["122.22.3.45"]}
+                ],
               "status": "ACTIVE",
               "create_at": "2014-07-29 15:08:39",
               "update_at": "2014-08-05 17:37:56"
@@ -129,8 +133,12 @@ API规范
               "cpu_num": 4,
               "mem_size": 8,
               "disk_size": 20,
-              "lan_ip_set": {"test1":["122.22.3.45"]},
-              "wan_ip_set":{"test1":["122.22.3.45"]},
+              "lan_ip_set": [
+                {"name": "test1", "ip_set": ["122.22.3.45"]}
+                ],
+              "wan_ip_set":[
+                {"name": "test1", "ip_set": ["122.22.3.45"]}
+                ],
               "status": "ERROR",
               "create_at": "2014-07-29 15:08:39",
               "update_at": "2014-08-05 17:37:56"
