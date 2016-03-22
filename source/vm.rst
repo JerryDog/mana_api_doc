@@ -45,6 +45,8 @@ API规范
 +-----------------------+----------+---------------+
 |  字段名               |  类型    |  描述         |
 +=======================+==========+===============+
+|  party（必选）        |  string  |  厂商信息     |
++-----------------------+----------+---------------+
 |  tenant_id（必选）    |  string  |  租户id       |
 +-----------------------+----------+---------------+
 |  region（必选）       |  string  |  所属区域     |
@@ -61,7 +63,7 @@ API规范
 
     curl  -i \
           -H 'X-Auth-Token: {token_id}' \
-          -X GET 'http://m.scloudm.com/mana_api/vm?tenant_id=123456789&region=dongjing&f=1&t=10'
+          -X GET 'http://m.scloudm.com/mana_api/vm?party=pbs&tenant_id=123456789&region=dongjing&f=1&t=10'
 
 
 
@@ -108,8 +110,6 @@ API规范
         Date: Thu, 28 Jan 2016 05:53:28 GMT
 
         {
-          "code": 200,
-          "msg": "",
           "vm_servers": [
             {
               "instance_name": "hehe",
@@ -117,12 +117,8 @@ API规范
               "cpu_num": 8,
               "mem_size": 16,
               "disk_size": 20,
-              "lan_ip_set": [
-                {"name": "test1", "ip_set": ["122.22.3.45"]}
-                ],
-              "wan_ip_set": [
-                {"name": "test1", "ip_set": ["122.22.3.45"]}
-                ],
+              "lan_ip_set": "192.168.0.2,192.168.0.3",
+              "wan_ip_set": "122.22.3.45,122.22.3.46",
               "status": "ACTIVE",
               "create_at": "2014-07-29 15:08:39",
               "update_at": "2014-08-05 17:37:56"
@@ -133,12 +129,8 @@ API规范
               "cpu_num": 4,
               "mem_size": 8,
               "disk_size": 20,
-              "lan_ip_set": [
-                {"name": "test1", "ip_set": ["122.22.3.45"]}
-                ],
-              "wan_ip_set":[
-                {"name": "test1", "ip_set": ["122.22.3.45"]}
-                ],
+              "lan_ip_set": "192.168.0.2,192.168.0.3",
+              "wan_ip_set": "122.22.3.45,122.22.3.46",
               "status": "ERROR",
               "create_at": "2014-07-29 15:08:39",
               "update_at": "2014-08-05 17:37:56"
@@ -147,3 +139,13 @@ API规范
         }
 
 
+错误返回样例
+
+::
+
+
+   HTTP/1.1 400 Bad Request
+   {
+     "msg": "Malformed request URL: URL's project_id 'e58c78fe826f4f0b890767a3e078101' doesn't match Context's project_id 'e58c78fe826f4f0b890767a3e0781019'",
+     "code": 400
+   }

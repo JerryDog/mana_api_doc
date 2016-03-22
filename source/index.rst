@@ -12,6 +12,9 @@ MANA API文档
    :numbered:
 
    overview
+   common
+   identify
+   region
    pm
    pm_act
    pm_accounts
