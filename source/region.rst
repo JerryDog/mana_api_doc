@@ -56,6 +56,7 @@ API规范
     curl -i \
          -X POST http://m.scloudm.com/mana_api/region_tenant \
          -H 'X-Auth-Token: {token_id}' \
+         -H 'Sp-Agent: default'
 
 
 返回参数

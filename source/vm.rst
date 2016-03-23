@@ -63,7 +63,8 @@ API规范
 
     curl  -i \
           -H 'X-Auth-Token: {token_id}' \
-          -X GET 'http://m.scloudm.com/mana_api/vm?party=pbs&tenant_id=123456789&region=dongjing&f=1&t=10'
+          -H 'Sp-Agent: default'
+          -X GET 'http://m.scloudm.com/mana_api/vm?tenant_id=123456789&region=dongjing&f=1&t=10'
 
 
 

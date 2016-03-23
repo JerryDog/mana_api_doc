@@ -63,6 +63,7 @@ API规范
 
     curl  -i \
           -H 'X-Auth-Token: {token_id}' \
+          -H 'Sp-Agent: default' \
           -X GET 'http://m.scloudm.com/mana_api/flow_monthly?project_id=5106f9c2d315&region=zhenru&month=2015-12'
 
 
@@ -150,6 +151,7 @@ API规范
 
     curl  -i \
           -H 'X-Auth-Token: {token_id}' \
+          -H 'Sp-Agent: default' \
           -X GET 'http://m.scloudm.com/mana_api/flow_monthly?project_id=5106f9c2d315&region=zhenru&start=2015-12-01&end=2015-12-04'
 
 

@@ -76,9 +76,9 @@ API规范
     curl -i -s \
          -X POST http://m.scloudm.com/mana_api/tokens \
          -H "Content-Type:application/json" \
+         -H "Sp-Agent: default"
          -d '{
                 "auth": {
-                    "party": "pbs",
                     "tenantName": "",
                     "passwordCredentials": {
                         "username": "demo",
