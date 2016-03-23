@@ -22,7 +22,7 @@ API规范
 认证服务API入口与API列表如下：
 
 
-    * API入口: http://m.scloudm.com/
+    * API入口: http://api.scloudm.com/
     * API列表:
 
 +------------------+------------------------------+------------+--------------------------------+
@@ -42,11 +42,13 @@ API规范
 
 请求参数
 
-+-----------------------+----------+-------------------+
-|  字段名               |  类型    |  描述             |
-+=======================+==========+===================+
-|  token                |  string  |  有效的 token     |
-+-----------------------+----------+-------------------+
++-----------------------+----------+------------------------------+
+|  字段名               |  类型    |  描述                        |
++=======================+==========+==============================+
+|  token                |  header  |  有效的 token                |
++-----------------------+----------+------------------------------+
+|  Sp-Agent             |  header  |  厂商类型如：scloudm、pbs    |
++-----------------------+----------+------------------------------+
 
 请求样例
 
@@ -54,9 +56,9 @@ API规范
 
     
     curl -i \
-         -X POST http://m.scloudm.com/mana_api/region_tenant \
+         -X GET http://api.scloudm.com/mana_api/region_tenant \
          -H 'X-Auth-Token: {token_id}' \
-         -H 'Sp-Agent: default'
+         -H 'Sp-Agent: scloudm'
 
 
 返回参数
@@ -85,22 +87,22 @@ API规范
     HTTP/1.0 200 OK
     
     {
+       "code": 200,
+       "msg": "",
        "tenants": [
            {
                "id": "1234",
-               "name": "ACME Corp",
-               "description": "A description ...",
-               "enabled": true
+               "name": "ACME Corp"
            },
            {
                "id": "3456",
-               "name": "Iron Works",
-               "description": "A description ...",
-               "enabled": true
+               "name": "Iron Works"
            }
         ],
-       "tenants_links": [],
-       "regions": ["beijing", "zhenru"]
+       "regions": [
+          "beijing",
+           "zhenru"
+        ]
    }
 
 
@@ -113,5 +115,6 @@ API规范
 
    {
      "msg": "The request you have made requires authentication.",
-     "code": 400
+     "code": 400,
+     "reason": "Unauthorized"
    }
