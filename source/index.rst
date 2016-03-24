@@ -20,6 +20,7 @@ MANA API文档
    pm_accounts
    pm_moni
    vm
+   vm_act
    vm_flow
 
 
