@@ -70,11 +70,12 @@ API规范
 
     
     curl -i \
-         -X POST http://api.scloudm.com/mana_api/vm_act/{tenant_id}/{region}/{server_id} \
+         -X POST http://api.scloudm.com/mana_api/vm_act/{tenant_id}/{region} \
          -H 'X-Auth-Token: {token_id}' \
          -H 'Sp-Agent: scloudm' \
+         -H 'Content-Type: application/json' \
          -d '{
-               "servers": "k432k234,a342fsd,234sdfg"
+               "servers": "k432k234,a342fsd,234sdfg",
                "os-start": null
             }'
 
