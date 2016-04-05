@@ -70,7 +70,7 @@ API规范
           -H 'X-Auth-Token: {token_id}' \
           -H 'Sp-Agent: scloudm' \
           -H 'Content-Type: application/json' \
-          -X POST 'http://api.scloudm.com/mana_api/pm_act/{tenant_id}/{region}' \
+          -X POST 'http://api.scloudm.com/mana_api/pm_act/{tenant_id}' \
           -d '{
             "act": "on|off|reset",
             "username": "liujiahua",

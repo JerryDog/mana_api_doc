@@ -16,11 +16,16 @@ MANA API文档
    identify
    region
    pm
+   pm_get
+   pm_add
+   pm_update
+   pm_order
+   pm_contact_list
    pm_act
    pm_accounts
    pm_moni
    vm
-   vm_act
+   vm_action
    vm_flow
 
 
