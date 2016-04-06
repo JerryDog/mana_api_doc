@@ -21,7 +21,7 @@
 API规范
 --------------------------
 
-获取物理机API入口与API列表如下：
+物理机订单API入口与API列表如下：
 
 
     * API入口: http://api.scloudm.com/
@@ -113,6 +113,7 @@ API规范
          {
            "code": 200,
            "msg": "",
+           "total_count": 1,
            "orders": [{
              "id": 6,
              "snids": "123re,34234,234s",
@@ -139,10 +140,9 @@ API规范
 +-----------------------+----------+-------------------------------+
 |  snids                |  string  |  需要迁移的snid列表,逗号间隔  |
 +-----------------------+----------+-------------------------------+
-|  dest_project         |  string  |  电话                         |
+|  dest_project         |  string  |  目标项目ID                   |
 +-----------------------+----------+-------------------------------+
-|  mailto               |  string  |  通知的邮件人列表，逗号间隔   |
-+-----------------------+----------+-------------------------------+
+
 
 发起订单请求样例
 
@@ -156,8 +156,7 @@ API规范
           -X POST 'http://api.scloudm.com/mana_api/pm_order/{tenant_id}' \
           -d '{
             "snids": "123,456,789",
-            "dest_project": "13dfg94440323dfc2",
-            "mailto": "jiahua@ztgame.com,wenjun@ztgame.com"
+            "dest_project": "13dfg94440323dfc2"
           }'
 
 
@@ -170,6 +169,7 @@ API规范
    {
      "msg": "add success",
      "code": 200,
+     "sendmail": "send mail success"
    }
 
 
@@ -215,6 +215,26 @@ API规范
    {
      "msg": "Order processing success",
      "code": 200,
+     "detail": [
+         {
+            "code": 404,
+            "msg": "order not found",
+            "order_id": "1",
+            "sendmail": "do-nothing"
+         },
+         {
+            "code": 200,
+            "msg": "success",
+            "order_id": "2",
+            "sendmail": "send mail success"
+         },
+         {
+            "code": 200,
+            "msg": "success",
+            "order_id": "3",
+            "sendmail": "send mail success"
+         }
+      ]
    }
 
 
@@ -229,5 +249,4 @@ API规范
    {
      "msg": "Malformed request URL: URL's project_id 'e58c78fe826f4f0b890767a3e078101' doesn't match Context's project_id 'e58c78fe826f4f0b890767a3e0781019'",
      "code": 400,
-     "reason": "Unauthorized"
    }
