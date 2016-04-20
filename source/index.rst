@@ -21,7 +21,7 @@ MANA API文档
    pm_update
    pm_refund
    pm_order
-   pm_ct
+   pm_email
    pm_act
    pm_accounts
    pm_moni
